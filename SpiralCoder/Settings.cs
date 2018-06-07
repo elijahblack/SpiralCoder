@@ -9,6 +9,8 @@ namespace SpiralCoder
 {
     class Settings
     {
+        
+
         /// <summary>
         /// Минимальное значение размерности массива
         /// </summary>

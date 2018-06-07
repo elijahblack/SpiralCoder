@@ -70,6 +70,7 @@
             // 
             this.SettingsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.SettingsGroupBox.BackColor = System.Drawing.SystemColors.Control;
             this.SettingsGroupBox.Controls.Add(this.StupidButton);
             this.SettingsGroupBox.Controls.Add(this.WayLabel3);
             this.SettingsGroupBox.Controls.Add(this.InitTypeLabel);
@@ -105,12 +106,12 @@
             // 
             this.InitTypeComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.InitTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.InitTypeComboBox.FormattingEnabled = true;
             this.InitTypeComboBox.Location = new System.Drawing.Point(6, 172);
             this.InitTypeComboBox.Name = "InitTypeComboBox";
             this.InitTypeComboBox.Size = new System.Drawing.Size(235, 21);
             this.InitTypeComboBox.TabIndex = 8;
-            this.InitTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectionChangeCommitted);
             // 
             // InitTypeLabel
             // 
@@ -124,6 +125,8 @@
             // WayLabel3
             // 
             this.WayLabel3.AutoSize = true;
+            this.WayLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.WayLabel3.ForeColor = System.Drawing.Color.Green;
             this.WayLabel3.Location = new System.Drawing.Point(12, 133);
             this.WayLabel3.Name = "WayLabel3";
             this.WayLabel3.Size = new System.Drawing.Size(176, 13);
@@ -133,6 +136,8 @@
             // WayLabel2
             // 
             this.WayLabel2.AutoSize = true;
+            this.WayLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.WayLabel2.ForeColor = System.Drawing.Color.Yellow;
             this.WayLabel2.Location = new System.Drawing.Point(12, 120);
             this.WayLabel2.Name = "WayLabel2";
             this.WayLabel2.Size = new System.Drawing.Size(176, 13);
@@ -142,6 +147,8 @@
             // WayLabel1
             // 
             this.WayLabel1.AutoSize = true;
+            this.WayLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.WayLabel1.ForeColor = System.Drawing.Color.Red;
             this.WayLabel1.Location = new System.Drawing.Point(12, 106);
             this.WayLabel1.Name = "WayLabel1";
             this.WayLabel1.Size = new System.Drawing.Size(180, 13);
@@ -152,12 +159,12 @@
             // 
             this.SetEncodeComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.SetEncodeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SetEncodeComboBox.FormattingEnabled = true;
             this.SetEncodeComboBox.Location = new System.Drawing.Point(6, 82);
             this.SetEncodeComboBox.Name = "SetEncodeComboBox";
             this.SetEncodeComboBox.Size = new System.Drawing.Size(235, 21);
             this.SetEncodeComboBox.TabIndex = 3;
-            this.SetEncodeComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectionChangeCommitted);
             // 
             // SetEncodeLabel
             // 
@@ -172,12 +179,12 @@
             // 
             this.ArrayLengthComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.ArrayLengthComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ArrayLengthComboBox.FormattingEnabled = true;
             this.ArrayLengthComboBox.Location = new System.Drawing.Point(6, 32);
             this.ArrayLengthComboBox.Name = "ArrayLengthComboBox";
             this.ArrayLengthComboBox.Size = new System.Drawing.Size(235, 21);
             this.ArrayLengthComboBox.TabIndex = 1;
-            this.ArrayLengthComboBox.SelectionChangeCommitted += new System.EventHandler(this.ComboBox_SelectionChangeCommitted);
             // 
             // ArrayLengthLabel
             // 
@@ -267,6 +274,7 @@
             this.TextButton.TabIndex = 4;
             this.TextButton.Text = "Сформировать текст";
             this.TextButton.UseVisualStyleBackColor = true;
+            this.TextButton.Click += new System.EventHandler(this.TextButton_Click);
             // 
             // MainForm
             // 

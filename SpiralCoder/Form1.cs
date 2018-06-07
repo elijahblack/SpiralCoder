@@ -20,31 +20,37 @@ namespace SpiralCoder
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // Инициализация списков
             Settings.SetComboBoxData(ArrayLengthComboBox, Settings.GetArrayLengthArray());
             Settings.SetComboBoxData(SetEncodeComboBox, Code.codes);
             Settings.SetComboBoxData(InitTypeComboBox, Settings.GetInitTypeArray());
 
+            // Блокируем кнопки, чтобы тупой пользователь не начал шифровать текс, до того, как появится текст. 
+            EncodeButton.Enabled = false;
+            DecodeButton.Enabled = false;
 
+            // Скрываем ненужные элементы
+            WayLabel1.Visible = false;
+            WayLabel2.Visible = false;
+            WayLabel3.Visible = false;
         }
-
-        private void ComboBox_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-
-            //Program.initType = Convert.ToInt32(InitTypeComboBox.SelectedValue);
-
-
-            // TEST
-            //StupidButton.Text = Program.N.ToString();
-            //StupidButton.Text = ArrayLengthComboBox.SelectedValue.ToString();
-            //StupidButton.Text = SetEncodeComboBox.SelectedValue.ToString();
-            //StupidButton.Text = InitTypeComboBox.SelectedValue.ToString();
-        }
-
+        
         private void StupidButton_Click(object sender, EventArgs e)
         {
             ArrayLengthComboBox.SelectedValue = 11;
             SetEncodeComboBox.SelectedValue = 0;
             InitTypeComboBox.SelectedValue = 2;
+        }
+
+        private void TextButton_Click(object sender, EventArgs e)
+        {
+            // включаем кнопку шифрования
+            EncodeButton.Enabled = true;
+
+            // Отображаем ненужные элементы
+            WayLabel1.Visible = true;
+            WayLabel2.Visible = true;
+            WayLabel3.Visible = true;
         }
     }
 }
