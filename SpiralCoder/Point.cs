@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SpiralCoder
 {
+    /// <summary>
+    /// Класс точки на плоскости
+    /// </summary>
     class Point
     {
         private int x; 
