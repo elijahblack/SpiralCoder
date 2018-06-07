@@ -10,15 +10,40 @@ namespace SpiralCoder
     {
         // слишком много глобальных переменных
         // делать так -- очень плохо, но работает
-        public static int initType = -1;            // тип инициализации массива
-        public static string code = "";             // код метода шифрования
-        public static char firstCoord = 'y';        // первая обрабатываемая ось
-        public static int[] firstD = new int[2];    // исходные отклонения
-        public static int[] d = new int[2];         // отклонения
 
-        public static string originalText = "";     // исходный текст
-        public static string[,] array;              // массив шифруемого чего-нибудь
-        public static int N = 0;                    // размерность массива
+        /// <summary>
+        /// Тип инициализации массива
+        /// </summary>
+        public static int initType = -1;
+        /// <summary>
+        /// Код метода шифрования
+        /// </summary>
+        public static string code = "";
+        /// <summary>
+        /// Первая обрабатываемая ось
+        /// </summary>
+        public static char firstCoord = 'y';
+        /// <summary>
+        /// Исходные отклонения
+        /// </summary>
+        public static int[] firstD = new int[2];
+        /// <summary>
+        /// Отклонения
+        /// </summary>
+        public static int[] d = new int[2];
+
+        /// <summary>
+        /// Исходный текст
+        /// </summary>
+        public static string originalText = "";
+        /// <summary>
+        /// Массив шифруемого чего-нибудь
+        /// </summary>
+        public static string[,] array;
+        /// <summary>
+        /// Размерность массива
+        /// </summary>
+        public static int N = 0; 
 
         /// <summary>
         /// Главная точка входа для приложения.

@@ -22,7 +22,7 @@ namespace SpiralCoder
         {
             // Инициализация списков
             Settings.SetComboBoxData(ArrayLengthComboBox, Settings.GetArrayLengthArray());
-            Settings.SetComboBoxData(SetEncodeComboBox, Code.codes);
+            Settings.SetComboBoxData(EncodeComboBox, Code.codes);
             Settings.SetComboBoxData(InitTypeComboBox, Settings.GetInitTypeArray());
 
             // Блокируем кнопки, чтобы тупой пользователь не начал шифровать текс, до того, как появится текст. 
@@ -35,10 +35,13 @@ namespace SpiralCoder
             WayLabel3.Visible = false;
         }
         
+        /// <summary>
+        /// Тупая кнопка для задания
+        /// </summary>
         private void StupidButton_Click(object sender, EventArgs e)
         {
             ArrayLengthComboBox.SelectedValue = 11;
-            SetEncodeComboBox.SelectedValue = 0;
+            EncodeComboBox.SelectedValue = 0;
             InitTypeComboBox.SelectedValue = 2;
         }
 
@@ -51,6 +54,15 @@ namespace SpiralCoder
             WayLabel1.Visible = true;
             WayLabel2.Visible = true;
             WayLabel3.Visible = true;
+            
+            // Явное приведение к INT, нужно потому что переменные INT, а SelectedValue -- OBJECT
+            // Не смотря на то, что везде VALUE прискаевается INT, на момент компиляции этого еще не произошло и вылезет ошибка.
+            // Если хочешь, попробуй удалить INT со скобками. 
+            Program.N = (int)ArrayLengthComboBox.SelectedValue;
+            Program.initType = (int)EncodeComboBox.SelectedValue;
+            Program.firstCoord = Code.GetFirstOperator(Code.codes[(int)EncodeComboBox.SelectedValue]);
+            Program.d = Code.GetDeviation(Code.codes[(int)EncodeComboBox.SelectedValue]);
+            Program.code = Code.codes[(int)EncodeComboBox.SelectedValue];
         }
     }
 }

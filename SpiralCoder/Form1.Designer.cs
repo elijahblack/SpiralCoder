@@ -36,7 +36,7 @@
             this.WayLabel3 = new System.Windows.Forms.Label();
             this.WayLabel2 = new System.Windows.Forms.Label();
             this.WayLabel1 = new System.Windows.Forms.Label();
-            this.SetEncodeComboBox = new System.Windows.Forms.ComboBox();
+            this.EncodeComboBox = new System.Windows.Forms.ComboBox();
             this.SetEncodeLabel = new System.Windows.Forms.Label();
             this.ArrayLengthComboBox = new System.Windows.Forms.ComboBox();
             this.ArrayLengthLabel = new System.Windows.Forms.Label();
@@ -75,7 +75,7 @@
             this.SettingsGroupBox.Controls.Add(this.WayLabel3);
             this.SettingsGroupBox.Controls.Add(this.InitTypeLabel);
             this.SettingsGroupBox.Controls.Add(this.ArrayLengthComboBox);
-            this.SettingsGroupBox.Controls.Add(this.SetEncodeComboBox);
+            this.SettingsGroupBox.Controls.Add(this.EncodeComboBox);
             this.SettingsGroupBox.Controls.Add(this.WayLabel2);
             this.SettingsGroupBox.Controls.Add(this.InitTypeComboBox);
             this.SettingsGroupBox.Controls.Add(this.WayLabel1);
@@ -155,16 +155,16 @@
             this.WayLabel1.TabIndex = 4;
             this.WayLabel1.Text = "Первый обрабатываемый символ";
             // 
-            // SetEncodeComboBox
+            // EncodeComboBox
             // 
-            this.SetEncodeComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.EncodeComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SetEncodeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SetEncodeComboBox.FormattingEnabled = true;
-            this.SetEncodeComboBox.Location = new System.Drawing.Point(6, 82);
-            this.SetEncodeComboBox.Name = "SetEncodeComboBox";
-            this.SetEncodeComboBox.Size = new System.Drawing.Size(235, 21);
-            this.SetEncodeComboBox.TabIndex = 3;
+            this.EncodeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EncodeComboBox.FormattingEnabled = true;
+            this.EncodeComboBox.Location = new System.Drawing.Point(6, 82);
+            this.EncodeComboBox.Name = "EncodeComboBox";
+            this.EncodeComboBox.Size = new System.Drawing.Size(235, 21);
+            this.EncodeComboBox.TabIndex = 3;
             // 
             // SetEncodeLabel
             // 
@@ -332,7 +332,7 @@
         /// <summary>
         /// Список выбора метода шифрования
         /// </summary>
-        private System.Windows.Forms.ComboBox SetEncodeComboBox;
+        private System.Windows.Forms.ComboBox EncodeComboBox;
         /// <summary>
         /// Метка выбора метода шифрования
         /// </summary>
