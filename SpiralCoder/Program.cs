@@ -8,6 +8,8 @@ namespace SpiralCoder
 {
     static class Program
     {
+        // слишком много глобальных переменных
+        // делать так -- очень плохо, но работает
         public static string initType = "null";     // тип инициализации массива
         public static string code = "";             // код метода шифрования
         public static char firstCoord = 'y';        // первая обрабатываемая ось
