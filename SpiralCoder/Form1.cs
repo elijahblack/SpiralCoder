@@ -63,6 +63,22 @@ namespace SpiralCoder
             Program.firstCoord = Code.GetFirstOperator(Code.codes[(int)EncodeComboBox.SelectedValue]);
             Program.d = Code.GetDeviation(Code.codes[(int)EncodeComboBox.SelectedValue]);
             Program.code = Code.codes[(int)EncodeComboBox.SelectedValue];
+
+            Init.Start(); // инициализируем текст
+            DGV.Create(Program.N, Program.N, dataGridView); // создаём таблицу
+            DGV.Write(Program.array, dataGridView); // заполняем таблицу
+            TextGroupBox.Text = "Шифруемый текст"; // Меняем заголовок
+            textBox.Text = Program.originalText; // пишем шифруемый текст
+        }
+
+        private void EncodeButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DecodeButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

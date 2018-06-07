@@ -44,7 +44,7 @@
             this.EncodeButton = new System.Windows.Forms.Button();
             this.TextGroupBox = new System.Windows.Forms.GroupBox();
             this.DecodeButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox = new System.Windows.Forms.TextBox();
             this.TextButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SettingsGroupBox.SuspendLayout();
@@ -229,12 +229,13 @@
             this.EncodeButton.TabIndex = 2;
             this.EncodeButton.Text = "Зашифровать";
             this.EncodeButton.UseVisualStyleBackColor = true;
+            this.EncodeButton.Click += new System.EventHandler(this.EncodeButton_Click);
             // 
             // TextGroupBox
             // 
             this.TextGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextGroupBox.Controls.Add(this.textBox1);
+            this.TextGroupBox.Controls.Add(this.textBox);
             this.TextGroupBox.Location = new System.Drawing.Point(3, 352);
             this.TextGroupBox.Name = "TextGroupBox";
             this.TextGroupBox.Size = new System.Drawing.Size(497, 142);
@@ -252,17 +253,18 @@
             this.DecodeButton.TabIndex = 3;
             this.DecodeButton.Text = "Расшифровать";
             this.DecodeButton.UseVisualStyleBackColor = true;
+            this.DecodeButton.Click += new System.EventHandler(this.DecodeButton_Click);
             // 
-            // textBox1
+            // textBox
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.textBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(7, 15);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(490, 121);
-            this.textBox1.TabIndex = 0;
+            this.textBox.Location = new System.Drawing.Point(7, 15);
+            this.textBox.Multiline = true;
+            this.textBox.Name = "textBox";
+            this.textBox.Size = new System.Drawing.Size(490, 121);
+            this.textBox.TabIndex = 0;
             // 
             // TextButton
             // 
@@ -356,7 +358,7 @@
         private System.Windows.Forms.GroupBox TextGroupBox;
         private System.Windows.Forms.Button DecodeButton;
         private System.Windows.Forms.Button EncodeButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.Button TextButton;
     }
 }

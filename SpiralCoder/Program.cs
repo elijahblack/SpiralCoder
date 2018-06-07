@@ -54,9 +54,6 @@ namespace SpiralCoder
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
-
-            //Dialog.Start();
-            Init.Start();
         }
 
         /// <summary>
