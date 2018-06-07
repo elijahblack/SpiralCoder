@@ -130,113 +130,6 @@ internal class Dialog
     }
 }
 
-
-/// <summary>
-/// Дешифрование
-/// </summary>
-internal class Decode
-{
-    /// <summary>
-    /// Метод дешифрований
-    /// </summary>
-    /// <param name="text"> Дешифруемый текст </param>
-    /// <returns> Дешифрованный текст </returns>
-    internal static string Start(string text)
-    {
-        char[] encodeArray = text.ToCharArray(); // зашифрованный массив
-        string[] encodeString = new string[encodeArray.Length]; // исправляем косяким с массивом индексов (костыли, но тестить удобнее)
-        string[,] decodeArray = new string[N, N]; // расшифрованный массив
-        firstCoord = Code.GetFirstOperator(code); // заново получаем первую координатную ось спирали
-        d = Code.GetDeviation(code); //                             и первые приращения
-        char secondCoord = firstCoord == 'x' ? 'y' : 'x'; // логическим образом получаемм вторую ось
-        Point c = new Point(N / 2, N / 2); // координата центра
-        string str = ""; // итоговая расшифрованная строка
-        string temp = text; // дублируем шифрованный текст, чтобы издеваться над текстом, не сломав сохраненный вариант
-
-        // тут исправляется косяк, порожденный моей ленью
-        if (initType == "index")
-        {
-            encodeString = new string[N * N];
-
-            for (int i = 0; i < (N * N); i++)
-            {
-                /* Так как я ленивый, я добавил удобный для тестирования вариант массива с элементами вида "[x y]" 
-                 * Отсюда потекли проблемы. В частности, при посимвольном шифровании, 
-                 *      каждый элемент шифрованной строки является элементом исходной строки (один элемент - один символ, просто). 
-                 * А в случае с индексами, каждый элемент состоит минимум из 5 символов (один элемент - несколько символов, не надо так), 
-                 *      где каждый элемент начинается с "[" и заканчивается на "]" 
-                 */
-                encodeString[i] = temp.Substring(0, temp.IndexOf(']') + 1); // Метод  Substring(i, j) возвращает j элементов строки, начиная с i
-                                                                            //      "[" искать нет смысла, этот символ всегда первый
-                                                                            //      А IndexOf(char) возвращает индекс первого вхождения char в строку
-                temp = temp.Remove(0, temp.IndexOf(']') + 1);               // Метод Remove(i, j) возвращает строку, 
-                                                                            //      в которой было удалено j символов, начиная с i
-            }
-        }
-        else // если бы не моя лень и не массив индексов, хватило бы куска ниже
-        {
-            for (int i = 0; i < (N * N); i++)
-            {
-                // Тот же фокус, что и в IF выше, но по одному элементу
-                encodeString[i] = temp.Substring(0, 1); // добавляет один символ с начала строки
-                temp = temp.Remove(0, 1);               // и удаляем первый симво
-            }
-        }
-
-        /* Для дешифрования нужно:
-         *      - разделить шифрованный текст на элементы (сделано выше); 
-         *      - повторить ту же спираль, что и при шифровании, только не считывать элементы в строку, 
-         *              а записывать по одному шифрованному элементу в массив; 
-         *      - считать массив "построчно" и получить исходный текст. */
-
-        int index = 0; // костылиндекс
-
-        decodeArray[c.X, c.Y] = encodeString[index]; // записываем первый элемент в центр
-        index++; // костылиндекс++
-
-        Code.Reverse(d); // я так и не понял, почему оно здесь, но без этого массив получается перевернутым
-
-        for (int i = 0; i <= (N - 1); i++)
-        {
-            // тут схожий непонятный кусок кода, см. Encode, только там обе операции в одной строке, а тут пришлось поделить, ибо index
-            index = MagicDecode(decodeArray, encodeString, index, c, firstCoord, d[0], i);  // index возвращается, потому что иначе он не меняется
-            index = MagicDecode(decodeArray, encodeString, index, c, secondCoord, d[1], i); // считай, очередной костыль
-            Code.Reverse(d); // разворачиваем отклонения
-        }
-
-        MagicDecode(decodeArray, encodeString, index, c, firstCoord, d[0], (N - 1)); // добавляется финишная черта
-
-        // Собирает построенный расшифрованный массив в строку
-        str += ArrayToString(decodeArray);
-
-        return str;
-    }
-
-    /// <summary>
-    /// Магия дешифрования
-    /// </summary>
-    /// <param name="decodeArray"> Дешифрованный массив </param>
-    /// <param name="encodeString"> Шифрованный массив </param>
-    /// <param name="index"> Индекс элемента шифрованного массива </param>
-    /// <param name="c"> Точка </param>
-    /// <param name="coord"> Обрабатываемая координатная ось </param>
-    /// <param name="d"> Отклонение координаты по выбранной оси </param>
-    /// <param name="n"> Количество циклов магии </param>
-    /// <returns> Возвращает индекс шифрованного массива, чтобы не ломать порядок </returns>
-    static int MagicDecode(string[,] decodeArray, string[] encodeString, int index, Point c, char coord, int d, int n)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            // бумажка в помощь
-            c.Add(coord, d);
-            decodeArray[c.X, c.Y] = encodeString[index];
-            index++;
-        }
-        return index;
-    }
-}
-
-
 static void Main()
 {
     Dialog.Start(); // лаконично и красиво
@@ -282,6 +175,5 @@ static void Show()
     }
     Console.WriteLine();
 }
-
 
     }
