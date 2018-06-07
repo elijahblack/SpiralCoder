@@ -10,18 +10,29 @@ using System.Windows.Forms;
 
 namespace SpiralCoder
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+
+        private void MainForm_Load(object sender, EventArgs e)
         {
-            
+            Settings.SetComboBoxData(ArrayLengthComboBox, Settings.GetArrayLengthArray()); 
+            Settings.SetComboBoxData(InitTypeComboBox, Settings.GetInitTypeArray());
         }
 
-        
+        private void ComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+
+            Program.initType = Convert.ToInt32(InitTypeComboBox.SelectedValue);
+
+
+            // TEST
+            //StupidButton.Text = Program.N.ToString();
+            StupidButton.Text = ArrayLengthComboBox.SelectedValue.ToString();
+        }
     }
 }

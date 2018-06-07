@@ -10,7 +10,7 @@ namespace SpiralCoder
     {
         // слишком много глобальных переменных
         // делать так -- очень плохо, но работает
-        public static string initType = "null";     // тип инициализации массива
+        public static int initType = -1;            // тип инициализации массива
         public static string code = "";             // код метода шифрования
         public static char firstCoord = 'y';        // первая обрабатываемая ось
         public static int[] firstD = new int[2];    // исходные отклонения
@@ -28,7 +28,10 @@ namespace SpiralCoder
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
+
+            //Dialog.Start();
+            Init.Start();
         }
 
         /// <summary>
@@ -50,5 +53,7 @@ namespace SpiralCoder
 
             return temp;
         }
+
+        
     }
 }

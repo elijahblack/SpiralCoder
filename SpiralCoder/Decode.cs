@@ -30,7 +30,7 @@ namespace SpiralCoder
                                                                         //                              не сломав сохраненный вариант
 
             // разбирается массив индексов
-            if (Program.initType == "index")
+            if (Program.initType == 0)
             {
                 encodeString = new string[Program.N * Program.N];
 
