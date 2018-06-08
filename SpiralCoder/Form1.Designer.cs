@@ -31,21 +31,21 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.SettingsGroupBox = new System.Windows.Forms.GroupBox();
             this.StupidButton = new System.Windows.Forms.Button();
-            this.InitTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.InitTypeLabel = new System.Windows.Forms.Label();
             this.WayLabel3 = new System.Windows.Forms.Label();
-            this.WayLabel2 = new System.Windows.Forms.Label();
-            this.WayLabel1 = new System.Windows.Forms.Label();
-            this.EncodeComboBox = new System.Windows.Forms.ComboBox();
-            this.SetEncodeLabel = new System.Windows.Forms.Label();
+            this.InitTypeLabel = new System.Windows.Forms.Label();
             this.ArrayLengthComboBox = new System.Windows.Forms.ComboBox();
+            this.EncodeComboBox = new System.Windows.Forms.ComboBox();
+            this.WayLabel2 = new System.Windows.Forms.Label();
+            this.InitTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.WayLabel1 = new System.Windows.Forms.Label();
             this.ArrayLengthLabel = new System.Windows.Forms.Label();
+            this.SetEncodeLabel = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.EncodeButton = new System.Windows.Forms.Button();
             this.TextGroupBox = new System.Windows.Forms.GroupBox();
-            this.DecodeButton = new System.Windows.Forms.Button();
             this.textBox = new System.Windows.Forms.TextBox();
             this.TextButton = new System.Windows.Forms.Button();
+            this.DecodeButton = new System.Windows.Forms.Button();
+            this.EncodeButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SettingsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -57,12 +57,16 @@
             // 
             // dataGridView
             // 
+            this.dataGridView.AllowUserToResizeColumns = false;
+            this.dataGridView.AllowUserToResizeRows = false;
             this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(3, 0);
+            this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView.Size = new System.Drawing.Size(497, 346);
             this.dataGridView.TabIndex = 0;
             // 
@@ -102,26 +106,6 @@
             this.StupidButton.UseVisualStyleBackColor = false;
             this.StupidButton.Click += new System.EventHandler(this.StupidButton_Click);
             // 
-            // InitTypeComboBox
-            // 
-            this.InitTypeComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.InitTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.InitTypeComboBox.FormattingEnabled = true;
-            this.InitTypeComboBox.Location = new System.Drawing.Point(6, 172);
-            this.InitTypeComboBox.Name = "InitTypeComboBox";
-            this.InitTypeComboBox.Size = new System.Drawing.Size(235, 21);
-            this.InitTypeComboBox.TabIndex = 8;
-            // 
-            // InitTypeLabel
-            // 
-            this.InitTypeLabel.AutoSize = true;
-            this.InitTypeLabel.Location = new System.Drawing.Point(3, 156);
-            this.InitTypeLabel.Name = "InitTypeLabel";
-            this.InitTypeLabel.Size = new System.Drawing.Size(63, 13);
-            this.InitTypeLabel.TabIndex = 7;
-            this.InitTypeLabel.Text = "Тип текста";
-            // 
             // WayLabel3
             // 
             this.WayLabel3.AutoSize = true;
@@ -133,47 +117,14 @@
             this.WayLabel3.TabIndex = 6;
             this.WayLabel3.Text = "Третий обрабатываемый символ";
             // 
-            // WayLabel2
+            // InitTypeLabel
             // 
-            this.WayLabel2.AutoSize = true;
-            this.WayLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.WayLabel2.ForeColor = System.Drawing.Color.Yellow;
-            this.WayLabel2.Location = new System.Drawing.Point(12, 120);
-            this.WayLabel2.Name = "WayLabel2";
-            this.WayLabel2.Size = new System.Drawing.Size(176, 13);
-            this.WayLabel2.TabIndex = 5;
-            this.WayLabel2.Text = "Второй обрабатываемый символ";
-            // 
-            // WayLabel1
-            // 
-            this.WayLabel1.AutoSize = true;
-            this.WayLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.WayLabel1.ForeColor = System.Drawing.Color.Red;
-            this.WayLabel1.Location = new System.Drawing.Point(12, 106);
-            this.WayLabel1.Name = "WayLabel1";
-            this.WayLabel1.Size = new System.Drawing.Size(180, 13);
-            this.WayLabel1.TabIndex = 4;
-            this.WayLabel1.Text = "Первый обрабатываемый символ";
-            // 
-            // EncodeComboBox
-            // 
-            this.EncodeComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.EncodeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.EncodeComboBox.FormattingEnabled = true;
-            this.EncodeComboBox.Location = new System.Drawing.Point(6, 82);
-            this.EncodeComboBox.Name = "EncodeComboBox";
-            this.EncodeComboBox.Size = new System.Drawing.Size(235, 21);
-            this.EncodeComboBox.TabIndex = 3;
-            // 
-            // SetEncodeLabel
-            // 
-            this.SetEncodeLabel.AutoSize = true;
-            this.SetEncodeLabel.Location = new System.Drawing.Point(3, 66);
-            this.SetEncodeLabel.Name = "SetEncodeLabel";
-            this.SetEncodeLabel.Size = new System.Drawing.Size(93, 13);
-            this.SetEncodeLabel.TabIndex = 2;
-            this.SetEncodeLabel.Text = "Тип шифрования";
+            this.InitTypeLabel.AutoSize = true;
+            this.InitTypeLabel.Location = new System.Drawing.Point(3, 156);
+            this.InitTypeLabel.Name = "InitTypeLabel";
+            this.InitTypeLabel.Size = new System.Drawing.Size(63, 13);
+            this.InitTypeLabel.TabIndex = 7;
+            this.InitTypeLabel.Text = "Тип текста";
             // 
             // ArrayLengthComboBox
             // 
@@ -186,6 +137,50 @@
             this.ArrayLengthComboBox.Size = new System.Drawing.Size(235, 21);
             this.ArrayLengthComboBox.TabIndex = 1;
             // 
+            // EncodeComboBox
+            // 
+            this.EncodeComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.EncodeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EncodeComboBox.FormattingEnabled = true;
+            this.EncodeComboBox.Location = new System.Drawing.Point(6, 82);
+            this.EncodeComboBox.Name = "EncodeComboBox";
+            this.EncodeComboBox.Size = new System.Drawing.Size(235, 21);
+            this.EncodeComboBox.TabIndex = 3;
+            // 
+            // WayLabel2
+            // 
+            this.WayLabel2.AutoSize = true;
+            this.WayLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.WayLabel2.ForeColor = System.Drawing.Color.Yellow;
+            this.WayLabel2.Location = new System.Drawing.Point(12, 120);
+            this.WayLabel2.Name = "WayLabel2";
+            this.WayLabel2.Size = new System.Drawing.Size(176, 13);
+            this.WayLabel2.TabIndex = 5;
+            this.WayLabel2.Text = "Второй обрабатываемый символ";
+            // 
+            // InitTypeComboBox
+            // 
+            this.InitTypeComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.InitTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.InitTypeComboBox.FormattingEnabled = true;
+            this.InitTypeComboBox.Location = new System.Drawing.Point(6, 172);
+            this.InitTypeComboBox.Name = "InitTypeComboBox";
+            this.InitTypeComboBox.Size = new System.Drawing.Size(235, 21);
+            this.InitTypeComboBox.TabIndex = 8;
+            // 
+            // WayLabel1
+            // 
+            this.WayLabel1.AutoSize = true;
+            this.WayLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.WayLabel1.ForeColor = System.Drawing.Color.Red;
+            this.WayLabel1.Location = new System.Drawing.Point(12, 106);
+            this.WayLabel1.Name = "WayLabel1";
+            this.WayLabel1.Size = new System.Drawing.Size(180, 13);
+            this.WayLabel1.TabIndex = 4;
+            this.WayLabel1.Text = "Первый обрабатываемый символ";
+            // 
             // ArrayLengthLabel
             // 
             this.ArrayLengthLabel.AutoSize = true;
@@ -194,6 +189,15 @@
             this.ArrayLengthLabel.Size = new System.Drawing.Size(123, 13);
             this.ArrayLengthLabel.TabIndex = 0;
             this.ArrayLengthLabel.Text = "Размерность матрицы";
+            // 
+            // SetEncodeLabel
+            // 
+            this.SetEncodeLabel.AutoSize = true;
+            this.SetEncodeLabel.Location = new System.Drawing.Point(3, 66);
+            this.SetEncodeLabel.Name = "SetEncodeLabel";
+            this.SetEncodeLabel.Size = new System.Drawing.Size(93, 13);
+            this.SetEncodeLabel.TabIndex = 2;
+            this.SetEncodeLabel.Text = "Тип шифрования";
             // 
             // splitContainer1
             // 
@@ -219,18 +223,6 @@
             this.splitContainer1.SplitterDistance = 503;
             this.splitContainer1.TabIndex = 2;
             // 
-            // EncodeButton
-            // 
-            this.EncodeButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.EncodeButton.Location = new System.Drawing.Point(3, 400);
-            this.EncodeButton.Name = "EncodeButton";
-            this.EncodeButton.Size = new System.Drawing.Size(247, 44);
-            this.EncodeButton.TabIndex = 2;
-            this.EncodeButton.Text = "Зашифровать";
-            this.EncodeButton.UseVisualStyleBackColor = true;
-            this.EncodeButton.Click += new System.EventHandler(this.EncodeButton_Click);
-            // 
             // TextGroupBox
             // 
             this.TextGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -242,18 +234,6 @@
             this.TextGroupBox.TabIndex = 1;
             this.TextGroupBox.TabStop = false;
             this.TextGroupBox.Text = "Текст";
-            // 
-            // DecodeButton
-            // 
-            this.DecodeButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DecodeButton.Location = new System.Drawing.Point(3, 450);
-            this.DecodeButton.Name = "DecodeButton";
-            this.DecodeButton.Size = new System.Drawing.Size(247, 44);
-            this.DecodeButton.TabIndex = 3;
-            this.DecodeButton.Text = "Расшифровать";
-            this.DecodeButton.UseVisualStyleBackColor = true;
-            this.DecodeButton.Click += new System.EventHandler(this.DecodeButton_Click);
             // 
             // textBox
             // 
@@ -277,6 +257,30 @@
             this.TextButton.Text = "Сформировать текст";
             this.TextButton.UseVisualStyleBackColor = true;
             this.TextButton.Click += new System.EventHandler(this.TextButton_Click);
+            // 
+            // DecodeButton
+            // 
+            this.DecodeButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DecodeButton.Location = new System.Drawing.Point(3, 450);
+            this.DecodeButton.Name = "DecodeButton";
+            this.DecodeButton.Size = new System.Drawing.Size(247, 44);
+            this.DecodeButton.TabIndex = 3;
+            this.DecodeButton.Text = "Расшифровать";
+            this.DecodeButton.UseVisualStyleBackColor = true;
+            this.DecodeButton.Click += new System.EventHandler(this.DecodeButton_Click);
+            // 
+            // EncodeButton
+            // 
+            this.EncodeButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.EncodeButton.Location = new System.Drawing.Point(3, 400);
+            this.EncodeButton.Name = "EncodeButton";
+            this.EncodeButton.Size = new System.Drawing.Size(247, 44);
+            this.EncodeButton.TabIndex = 2;
+            this.EncodeButton.Text = "Зашифровать";
+            this.EncodeButton.UseVisualStyleBackColor = true;
+            this.EncodeButton.Click += new System.EventHandler(this.EncodeButton_Click);
             // 
             // MainForm
             // 

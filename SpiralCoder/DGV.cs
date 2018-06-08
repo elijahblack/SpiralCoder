@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,7 @@ namespace SpiralCoder
             dataGridView.AllowUserToResizeRows = false;
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
+            dataGridView.ReadOnly = true;
 
             AddColumns(column, dataGridView);
             AddRows(rows, dataGridView);
@@ -119,6 +121,28 @@ namespace SpiralCoder
                     dataGridView.Rows[i].Cells[j].Value = array[i, j];
                 }
             }
+        }
+
+        /// <summary>
+        /// Метод "раскрашивания" ячеек, для большей наглядности
+        /// </summary>
+        /// <param name="dataGridView"> Обрабатываемая таблица </param>
+        public static void SpiralColoring(DataGridView dataGridView)
+        {
+            char secondCoord = Program.firstCoord == 'x' ? 'y' : 'x';
+            Point c = new Point(Program.N / 2, Program.N / 2); // координата центра
+            int[] dev = Code.GetDeviation(Program.code);
+
+            for (int i = 0; i < Program.N; i++)
+                for (int j = 0; j < Program.N; j++)
+                    dataGridView.Rows[i].Cells[j].Style.BackColor = Color.White;
+
+
+            dataGridView.Rows[c.X].Cells[c.Y].Style.BackColor = System.Drawing.Color.Red;
+            c.Add(Program.firstCoord, dev[0]);
+            dataGridView.Rows[c.X].Cells[c.Y].Style.BackColor = System.Drawing.Color.Yellow;
+            c.Add(secondCoord, dev[1]);
+            dataGridView.Rows[c.X].Cells[c.Y].Style.BackColor = System.Drawing.Color.Green;
         }
     }
 }

@@ -43,7 +43,11 @@ namespace SpiralCoder
         /// <summary>
         /// Размерность массива
         /// </summary>
-        public static int N = 0; 
+        public static int N = 0;
+        /// <summary>
+        /// Шифрованный текст
+        /// </summary>
+        public static string encodeText = "";
 
         /// <summary>
         /// Главная точка входа для приложения.

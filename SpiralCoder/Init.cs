@@ -22,13 +22,13 @@ namespace SpiralCoder
             switch (Program.initType)
             {
                 case 0:
-                    Init.Index();
+                    Index();
                     break;
                 case 1:
-                    Init.Simbols();
+                    Simbols();
                     break;
                 case 2:
-                    Init.Text();
+                    Text();
                     break;
                 default:
                     break;

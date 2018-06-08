@@ -59,7 +59,7 @@ namespace SpiralCoder
             // Не смотря на то, что везде VALUE прискаевается INT, на момент компиляции этого еще не произошло и вылезет ошибка.
             // Если хочешь, попробуй удалить INT со скобками. 
             Program.N = (int)ArrayLengthComboBox.SelectedValue;
-            Program.initType = (int)EncodeComboBox.SelectedValue;
+            Program.initType = (int)InitTypeComboBox.SelectedValue;
             Program.firstCoord = Code.GetFirstOperator(Code.codes[(int)EncodeComboBox.SelectedValue]);
             Program.d = Code.GetDeviation(Code.codes[(int)EncodeComboBox.SelectedValue]);
             Program.code = Code.codes[(int)EncodeComboBox.SelectedValue];
@@ -69,16 +69,21 @@ namespace SpiralCoder
             DGV.Write(Program.array, dataGridView); // заполняем таблицу
             TextGroupBox.Text = "Шифруемый текст"; // Меняем заголовок
             textBox.Text = Program.originalText; // пишем шифруемый текст
+            DGV.SpiralColoring(dataGridView);
         }
 
         private void EncodeButton_Click(object sender, EventArgs e)
         {
-
+            TextGroupBox.Text = "Зашифрованный текст";  // Меняем заголовок
+            Program.encodeText = Encode.Start();        // Запоминаем шифрованный текст
+            textBox.Text = Program.encodeText;          // пишем шифруемый текст
+            DecodeButton.Enabled = true;                // делаем кнопку дешифрования доступной
         }
 
         private void DecodeButton_Click(object sender, EventArgs e)
         {
-
+            TextGroupBox.Text = "Расшифрованный текст";         // Меняем заголовок
+            textBox.Text = Decode.Start(Program.encodeText);    // пишем шифруемый текст
         }
     }
 }
