@@ -43,6 +43,8 @@ namespace SpiralCoder
             ArrayLengthComboBox.SelectedValue = 11;
             EncodeComboBox.SelectedValue = 0;
             InitTypeComboBox.SelectedValue = 2;
+
+            Poo.Get();
         }
 
         private void TextButton_Click(object sender, EventArgs e)
